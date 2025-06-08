@@ -1,0 +1,10 @@
+.ipynb_checkpoints/
+.venv 
+.python-version 
+__pycache__
+uv.lock
+pyproject.toml
+
+
+
+

@@ -1,0 +1,33 @@
+# Set up Elastic Search 
+docker run -it \
+    --rm \
+    --name elasticsearch \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -e "discovery.type=single-node" \
+    -e "xpack.security.enabled=false" \
+    elasticsearch:9.0.2 
+
+pip install elasticsearch # automatically it is version 9.0.2 
+
+# Tiktoken 
+import sys
+!python -m ensurepip --upgrade # this is to upgrade pip 
+!{sys.executable} -m pip install tiktoken # this is to download tiktoken within the same python env 
+
+If you downloaded the package but it says module not found, usually it is because it is downloaded to a location different from where python is. 
+
+Example usage: 
+import tiktoken
+
+## Choose the encoding for the model
+encoding = tiktoken.encoding_for_model("gpt-4o")
+
+## Your prompt text
+prompt = "How are you?"
+
+## Encode the prompt into tokens
+tokens = encoding.encode(prompt)
+
+## Print the number of tokens
+print(f"Number of tokens: {len(tokens)}")
