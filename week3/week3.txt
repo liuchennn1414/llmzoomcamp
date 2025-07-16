@@ -1,0 +1,4 @@
+Common ranking evaluation metrics 
+- to find how relevant are each document to the question: 
+    - recall, MAP, F1 score, hit rate, MRR etc... 
+
